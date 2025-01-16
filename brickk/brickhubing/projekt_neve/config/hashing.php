@@ -46,9 +46,14 @@ return [
 
     'argon' => [
         'memory' => 65536,
-        'threads' => 1,
+        'threads' => 8,
         'time' => 4,
         'verify' => true,
     ],
 
 ];
+
+
+
+
+/* argon2 & salt */

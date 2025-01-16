@@ -2,25 +2,25 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MemberResource\Pages;
-use App\Filament\Resources\MemberResource\RelationManagers;
-use App\Models\Member;
+use App\Filament\Resources\CategoryResource\Pages;
+use App\Filament\Resources\CategoryResource\RelationManagers;
+use App\Models\Category;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Forms\Set;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Str;
 
-class MemberResource extends Resource
+class CategoryResource extends Resource
 {
-    protected static ?string $model = Member::class;
+    protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -28,11 +28,10 @@ class MemberResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('name')->required()->placeholder('Enter Name'),
-                TextInput::make('designation')->required()->placeholder('Enter Designation'),
-                TextInput::make('git_url')->url()->label('GitHub URL')->placeholder('Enter URL'),
-                TextInput::make('linkedin_url')->url()->label('LinkedIn URL')->placeholder('Enter URL'),
-                FileUpload::make('image'),
+                TextInput::make('name')->required()->placeholder('Name')
+                ->live(onBlur: true)
+                ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state))),
+                TextInput::make('slug')->required()->placeholder('Slug'),
                 Select::make('status')->options([
                     1 => 'Active',
                     0 => 'Block'
@@ -45,8 +44,7 @@ class MemberResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name'),
-                TextColumn::make('designation'),
-                ImageColumn::make('image')->width(100)
+                TextColumn::make('slug')
             ])
             ->filters([
                 //
@@ -71,9 +69,9 @@ class MemberResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMembers::route('/'),
-            'create' => Pages\CreateMember::route('/create'),
-            'edit' => Pages\EditMember::route('/{record}/edit'),
+            'index' => Pages\ListCategories::route('/'),
+            'create' => Pages\CreateCategory::route('/create'),
+            'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }
 }

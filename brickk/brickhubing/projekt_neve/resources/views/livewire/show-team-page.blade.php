@@ -33,8 +33,8 @@
             </svg>
         </div>
     </section>
-    
-    
+
+
     <section class="section teams">
         <div class="container">
             <div class="row justify-content-center">
@@ -48,16 +48,18 @@
                 </div>
             </div>
             <div class="row position-relative">
-                <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
+
                     @if($members->isNotEmpty())
                         @foreach ($members as $member)
-                            <x-team-card :member="$member" />
+                        <div class="col-xl-3 col-lg-4 col-md-6 mt-4">
+                            <x-team-carding :member="$member" />
+                        </div>
                         @endforeach
                     @endif
-                    
-                  
-                </div>
-               
+
+
+
+
             </div>
         </div>
     </section>
