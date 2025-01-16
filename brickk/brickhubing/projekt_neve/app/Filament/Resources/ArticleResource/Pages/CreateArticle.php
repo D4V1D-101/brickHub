@@ -1,16 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\CategoryResource\Pages;
+namespace App\Filament\Resources\ArticleResource\Pages;
 
-use App\Filament\Resources\CategoryResource;
 use Filament\Actions;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\ArticleResource;
 
-class CreateCategory extends CreateRecord
+class CreateArticle extends CreateRecord
 {
-    protected static string $resource = CategoryResource::class;
-
+    protected static string $resource = ArticleResource::class;
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
@@ -19,7 +18,7 @@ class CreateCategory extends CreateRecord
     {
         return Notification::make()
             ->success()
-            ->title('Category Created')
-            ->body('Category has been created successfully.');
+            ->title('Article Created')
+            ->body('Article has been created successfully.');
     }
 }
