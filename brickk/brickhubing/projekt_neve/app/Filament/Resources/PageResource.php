@@ -30,7 +30,7 @@ class PageResource extends Resource
             ->schema([
                 TextInput::make('title')->required()->placeholder('Title'),
                 RichEditor::make('content')->columnSpan(2),
-                FileUpload::make('image')->columnSpan(2),
+                TextInput::make('image')->url()->label('Image')->placeholder('Enter URL')->columnSpan(2),
                 Select::make('status')->options([
                     1 => 'Active',
                     0 => 'Block'
@@ -43,10 +43,10 @@ class PageResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')
-                
+
             ])
             ->filters([
-                //
+
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -61,7 +61,7 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+         
         ];
     }
 

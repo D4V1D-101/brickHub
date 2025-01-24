@@ -2,7 +2,7 @@
     <div class="card-img">
         @if($member->image!='')
 
-        <img loading="lazy" decoding="async" src="{{ asset('storage/'.$member->image) }}" alt="{{ $member->image }}" class="rounded w-100" width="300" height="332">
+        <img loading="lazy" decoding="async" src="{{ $member->image }}" alt="{{ $member->image }}" class="rounded w-100" width="300" height="332">
 
         @endif
 
@@ -11,12 +11,12 @@
             <ul class="card-social list-inline">
 
                 @if ($member->git_url!='')
-                <li class="list-inline-item"><a class="facebook" href="{{ $member->git_url }}"><i class="fab fa-facebook"></i></a>
+                <li class="list-inline-item"><a class="github" href="{{ $member->git_url }}"><i class="fab fa-github"></i></a>
                 </li>
                 @endif
 
                 @if ($member->linkedin_url!='')
-                <li class="list-inline-item"><a class="twitter" target="_blank" href="{{ $member->linkedin_url }}"><i class="fab fa-twitter"></i></a>
+                <li class="list-inline-item"><a class="linkedin" target="_blank" href="{{ $member->linkedin_url }}"><i class="fab fa-linkedin"></i></a>
                 </li>
                 @endif
             </ul>

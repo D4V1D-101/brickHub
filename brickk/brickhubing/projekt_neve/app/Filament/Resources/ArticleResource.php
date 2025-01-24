@@ -24,7 +24,7 @@ class ArticleResource extends Resource
 {
     protected static ?string $model = Article::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     public static function form(Form $form): Form
     {
@@ -33,7 +33,7 @@ class ArticleResource extends Resource
                 TextInput::make('title')->required()->placeholder('Title'),
                 Select::make('category_id')->label('Category')->options(Category::all()->pluck('name','id')),
                 TextInput::make('author')->required()->placeholder('Author'),
-                FileUpload::make('image')->placeholder('Image'),
+                TextInput::make('image')->url()->label('image')->placeholder('Enter URL'),
                 RichEditor::make('content')->columnSpan(2),
                 Select::make('status')->options([
                     1 => 'Active',

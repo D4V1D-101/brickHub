@@ -34,7 +34,7 @@
             </svg>
         </div>
     </section>
-    
+
     <section class="section">
         <div class="container">
             <div class="row">
@@ -44,15 +44,15 @@
 
                             @if ($articles->isNotEmpty())
                             @foreach ($articles as $article)
-                                    
-                                
-                          
+
+
+
                             <div class="col-md-6" data-aos="fade">
                                 <article class="blog-post">
                                     <div class="post-slider slider-sm rounded">
-                                   
+
                                         @if ($article->image!="")
-                                        <img loading="lazy" decoding="async" src="{{ asset('storage/'). ($article->image)}}" alt="{{ $article->title }}">
+                                        <img loading="lazy" decoding="async" src="{{$article->image}}" alt="{{$article->title}}">
                                         @endif
                                     </div>
                                     <div class="pt-4">
@@ -76,19 +76,19 @@
                     <!-- categories -->
                     <div class="widget widget-categories">
                         <h5 class="widget-title"><span>Category</span></h5>
-                        <ul class="list-unstyled widget-list">		
+                        <ul class="list-unstyled widget-list">
                             @if ($categories->isNotEmpty())
                             @foreach ($categories as $category)
                             <li><a wire:navigate href="{{ route('blog').'?categorySlug='.$category->slug }}">{{ $category->name }} </a>
-                            </li>	
+                            </li>
                             @endforeach
-                             
-                            @endif	
-                           		
-                           
+
+                            @endif
+
+
                         </ul>
                     </div>
-                   
+
                     <!-- latest post -->
                     <div class="widget">
                         <h5 class="widget-title"><span>Latest Article</span></h5>
@@ -100,7 +100,7 @@
                                     <a class="text-black" wire:navigate href="{{ route('blogDetail',$latestarticle->id) }}">
                                         <div class="widget-post-image flex-shrink-0 me-3">
                                             @if ($article->image!="")
-                                        <img loading="lazy" decoding="async" src="{{ asset('storage/'). ($latestarticle->image)}}" alt="{{ $article->title }}">
+                                        <img loading="lazy" decoding="async" src="{{ $article->image }}" alt="{{ $article->title }}">
                                         @endif
                                         </div>
                                     </a>
@@ -112,10 +112,10 @@
                             </ul>
                             @endforeach
                         @endif
-                        
+
                     </div>
-                    <!-- Social -->
-                    
+
+
                 </div>
             </div>
         </div>

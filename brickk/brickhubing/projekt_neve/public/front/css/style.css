@@ -3012,8 +3012,14 @@ textarea.form-control-lg {
 }
 
 .btn-outline-primary {
-  color: #0d6efd;
+  color: #dd0000;
+  padding: 20px;
   border-color: #0d6efd;
+}
+.btn-outline-primary {
+    background: #cc0e0e;
+    color: #102b18;
+    padding: 20px;
 }
 .btn-outline-primary:hover {
   color: #fff;
@@ -3062,7 +3068,7 @@ textarea.form-control-lg {
 }
 
 .btn-outline-success {
-  color: #198754;
+  color: #d41900;
   border-color: #198754;
 }
 .btn-outline-success:hover {

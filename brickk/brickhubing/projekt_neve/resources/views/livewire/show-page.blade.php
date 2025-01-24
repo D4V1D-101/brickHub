@@ -1,5 +1,5 @@
 <main>
-    
+
 <section class="page-header bg-tertiary">
 	<div class="container">
 		<div class="row">
@@ -37,18 +37,18 @@
 <section class="section">
 	<div class="container">
         @if ($page->image!="")
-            
-        
+
+
 		<div class="row justify-content-center align-items-center">
 			<div class="col-lg-7">
 				<div class="section-title">
                     {!! $page->content !!}
-				
+
 
 				</div>
 			</div>
 			<div class="col-lg-4 mt-5 mt-lg-0">
-            <img loading="lazy" decoding="async" src="{{ asset('storage/'.$page->image)}}" alt="">
+            <img loading="lazy" decoding="async" src="{{$page->image}}" alt="">
 			</div>
 		</div>
         @else

@@ -4,7 +4,7 @@
     <div class="row justify-content-center mb-5">
       <div class="col-lg-6">
         <div class="section-title text-center">
-          <p class="text-primary text-uppercase fw-bold mb-3">Frequient Questions</p>
+          <p class="text-primary text-uppercase fw-bold mb-3">Frequiently Aked Questions</p>
           <h1>Frequently Asked Questions</h1>
         </div>
       </div>

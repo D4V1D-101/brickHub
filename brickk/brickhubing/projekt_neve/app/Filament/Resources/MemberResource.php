@@ -32,7 +32,7 @@ class MemberResource extends Resource
                 TextInput::make('designation')->required()->placeholder('Enter Designation'),
                 TextInput::make('git_url')->url()->label('GitHub URL')->placeholder('Enter URL'),
                 TextInput::make('linkedin_url')->url()->label('LinkedIn URL')->placeholder('Enter URL'),
-                FileUpload::make('image'),
+                TextInput::make('image')->url()->label('image')->placeholder('Enter URL'),
                 Select::make('status')->options([
                     1 => 'Active',
                     0 => 'Block'
@@ -46,7 +46,7 @@ class MemberResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('designation'),
-                ImageColumn::make('image')->width(100)
+                ImageColumn::make('image'),
             ])
             ->filters([
                 //

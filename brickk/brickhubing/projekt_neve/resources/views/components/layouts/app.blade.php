@@ -41,13 +41,15 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav m-auto mb-2 mb-lg-0">
 					<li class="nav-item"> <a wire:navigate class="nav-link" href="{{route('home')}}">Home</a></li>
-					<li class="nav-item "> <a wire:navigate class="nav-link" href="{{route("page",1)}}">About Us</a></li>
-					<li class="nav-item "> <a wire:navigate class="nav-link" href="{{route('servicesPage')}}">Services</a></li>
+					<li class="nav-item "> <a wire:navigate class="nav-link" href="{{route("page",2)}}">About Us</a></li>
+					<li class="nav-item "> <a wire:navigate class="nav-link" href="{{route('servicesPage')}}">Games</a></li>
 					<li class="nav-item "> <a wire:navigate class="nav-link" href="{{ route('teamPage') }}">Our Team</a></li>
 					<li class="nav-item "><a wire:navigate class="nav-link " href="{{ route('blog') }}">Blog</a></li>
 					<li class="nav-item "><a wire:navigate class="nav-link " href="{{ route('faqs') }}">FAQ</a></li>
 				</ul>
-				<a href="#!" class="btn btn-outline-primary">Contact Us</a>				
+				<a href="#!" class="btn btn-outline-primary">Register</a>
+
+                <a href="#!" class="btn btn-outline-primary">Login</a>
 			</div>
 		</div>
 	</nav>
@@ -106,9 +108,9 @@
                         </li>
 					</ul>
 				</div>
-			</div>			
+			</div>
 		</div>
-		
+
 	</div>
 </footer>
 
